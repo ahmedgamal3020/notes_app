@@ -30,6 +30,7 @@ class NoteItem extends StatelessWidget {
             trailing: IconButton(
                 onPressed: (){},
                 icon:const  Icon(Icons.delete,
+                color: Colors.black,
                 size: 24,)),
 
           ),
