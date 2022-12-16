@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes/conponents/constants.dart';
-import 'package:notes/cubit/states.dart';
+import 'package:notes/cubit/add_notes_cubit/states.dart';
 import 'package:notes/models/note_model.dart';
 
 class AppCubit extends Cubit<AppStates>{
@@ -23,7 +23,7 @@ class AppCubit extends Cubit<AppStates>{
     }
 
   }
-  void addDate(NoteModel note)async{
+  void addData(NoteModel note)async{
     try {
       emit(AppAddDataLoadingState());
       var noteValue = Hive.box<NoteModel>(notesBox);

@@ -10,10 +10,13 @@ class SimpleBlocObserver implements BlocObserver {
 
   @override
   void onClose(BlocBase bloc) {
+    debugPrint('close');
   }
 
   @override
   void onCreate(BlocBase bloc) {
+    debugPrint('create');
+
   }
 
   @override
