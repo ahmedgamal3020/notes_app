@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes/cubit/cubit.dart';
+import 'package:notes/cubit/states.dart';
 import 'package:notes/view/widgets/bottom_sheet.dart';
 import 'package:notes/view/widgets/notes_view_body.dart';
 
@@ -7,26 +11,34 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: NotesViewBody(),
-      floatingActionButton: FloatingActionButton(
-        child:const  Icon(Icons.add,color: Colors.white,),
-        onPressed: (){
-          showModalBottomSheet(
-              shape:const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-              topRight: Radius.circular(18),
-          topLeft: Radius.circular(18),
-              )
-              ) ,
-              context: context,
-              builder:(context){
-                return AddNoteInBottomSheet();
-              }
+    return BlocConsumer<AppCubit, AppStates>(
+        listener: (context, state) {
+        },
+        builder: (context, state) {
+          return Scaffold(
+            body: NotesViewBody(),
+            floatingActionButton: FloatingActionButton(
+              child: const Icon(Icons.add, color: Colors.white,),
+              onPressed: () {
+                showModalBottomSheet(
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(18),
+                          topLeft: Radius.circular(18),
+                        )
+                    ),
+                    context: context,
+                    builder: (context) {
+                      return AddNoteInBottomSheet();
+                    },
+                 routeSettings: RouteSettings(arguments:debugEnhanceLayoutTimelineArguments )
+                );
+              },
+            ),
           );
         },
-      ),
-    );
+      );
+
   }
 }
 
