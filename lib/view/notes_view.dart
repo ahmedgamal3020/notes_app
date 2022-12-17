@@ -9,7 +9,7 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            body: NotesViewBody(),
+            body:const  NotesViewBody(),
             floatingActionButton: FloatingActionButton(
               child: const Icon(Icons.add, color: Colors.white,),
               onPressed: () {
@@ -23,7 +23,7 @@ class NotesView extends StatelessWidget {
                     ),
                     context: context,
                     builder: (context) {
-                      return AddNoteInBottomSheet();
+                      return const AddNoteInBottomSheet();
                     },
 
                 );

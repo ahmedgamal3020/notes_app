@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notes/cubit/add_notes_cubit/cubit.dart';
 import 'package:notes/cubit/notes/cubit.dart';
 import 'package:notes/models/note_model.dart';
 import 'package:notes/view/widgets/app_bar.dart';
@@ -33,7 +32,6 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                       widget.note.subTitle =subTitle??widget.note.subTitle;
                       widget.note.save();
                       NotesCubit.get(context).getNotes();
-                      print(title);
                       Navigator.pop(context);
                     },
                     title: 'Edit NOte',

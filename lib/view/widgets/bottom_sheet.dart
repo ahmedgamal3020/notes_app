@@ -63,7 +63,7 @@ class AddNoteInBottomSheet extends StatelessWidget {
                       const SizedBox(
                         height: 30,
                       ),
-                      ListViewItemColor(),
+                      const ListViewItemColor(),
                       state is AppAddDataLoadingState?const  CircularProgressIndicator():CustomButton(
                         width: double.infinity,
                         text: 'Add',
@@ -81,7 +81,7 @@ class AddNoteInBottomSheet extends StatelessWidget {
                           NotesCubit.get(context).getNotes();
                           listViewController.animateTo(
                               listViewController.position.maxScrollExtent,
-                              duration: Duration(seconds: 1),
+                              duration:const  Duration(seconds: 1),
                               curve: Curves.fastOutSlowIn
                           );
                         },
