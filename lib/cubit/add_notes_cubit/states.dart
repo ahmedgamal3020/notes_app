@@ -1,12 +1,12 @@
-abstract class AppStates{}
+abstract class AddNoteStates{}
 
-class AppInitialState extends AppStates{}
+class AppInitialState extends AddNoteStates{}
 
-class AppValidateState extends AppStates{}
+class AppValidateState extends AddNoteStates{}
 
-class AppAddDataLoadingState extends AppStates{}
+class AppAddDataLoadingState extends AddNoteStates{}
 
-class AppAddDataSuccessState extends AppStates{}
+class AppAddDataSuccessState extends AddNoteStates{}
 
-class AppAddDataErrorState extends AppStates{}
+class AppAddDataErrorState extends AddNoteStates{}
 

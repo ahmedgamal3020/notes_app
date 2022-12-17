@@ -14,6 +14,7 @@ class NotesView extends StatelessWidget {
               child: const Icon(Icons.add, color: Colors.white,),
               onPressed: () {
                 showModalBottomSheet(
+                  isScrollControlled: true,
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(18),
@@ -24,7 +25,7 @@ class NotesView extends StatelessWidget {
                     builder: (context) {
                       return AddNoteInBottomSheet();
                     },
-                 routeSettings: RouteSettings(arguments:debugEnhanceLayoutTimelineArguments )
+
                 );
               },
             ),

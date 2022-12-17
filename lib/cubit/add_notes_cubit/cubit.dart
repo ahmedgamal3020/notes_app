@@ -5,10 +5,10 @@ import 'package:notes/conponents/constants.dart';
 import 'package:notes/cubit/add_notes_cubit/states.dart';
 import 'package:notes/models/note_model.dart';
 
-class AppCubit extends Cubit<AppStates>{
-  AppCubit():super(AppInitialState());
+class AddNoteCubit extends Cubit<AddNoteStates>{
+  AddNoteCubit():super(AppInitialState());
 
-  static AppCubit get(context)=>BlocProvider.of(context);
+  static AddNoteCubit get(context)=>BlocProvider.of(context);
 
   AutovalidateMode autoValidateMode=AutovalidateMode.disabled;
 
@@ -23,9 +23,13 @@ class AppCubit extends Cubit<AppStates>{
     }
 
   }
+  Color color = const Color(0xffE76E0B);
   void addData(NoteModel note)async{
+
+    note.color=color.value;
+    emit(AppAddDataLoadingState());
     try {
-      emit(AppAddDataLoadingState());
+
       var noteValue = Hive.box<NoteModel>(notesBox);
       await noteValue.add(note);
       emit(AppAddDataSuccessState());
